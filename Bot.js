@@ -12,8 +12,21 @@ function isCommand(command, message) {
     var command = command.toLowerCase();
     var content = message.content.toLowerCase();
     return content.startsWith(prefix + command);
+}
 
- if (isCommand("Commands", message)) {
+// General commands
+client.on("message", (message) => {
+    if (message.author.bot) return; // Dont answer yourself.
+    var args = message.content.split(/[ ]+/)
+
+    let soruce = message
+    let guild = message.guild
+    let channels = guild.channels
+    var ruleschannel = channels.find("name", "rules")
+    var general = channels.find("name", "general-chat")
+    var logchannel = channels.find("name", "admin-logs")
+
+    if (isCommand("Commands", message)) {
         message.channel.send({
             embed: {
                 color: 3447003,
@@ -21,8 +34,8 @@ function isCommand(command, message) {
                     name: client.user.username,
                     icon_url: client.user.avatarURL
                 },
-                title: "TNF BlackMarket Information",
-                description: "Information about the market can be found below",
+                title: "Commands list",
+                description: "All commands are shown below",
                 fields: [{
                         name: "Rules",
                         value: "To find out about the rules please visit #Rules"
@@ -43,7 +56,7 @@ function isCommand(command, message) {
                 timestamp: new Date(),
                 footer: {
                     icon_url: client.user.avatarURL,
-                    text: "[TGM] The German Mercenaries"
+                    text: "The Northern Frontier, BlackMarket"
                 }
             }
         })
