@@ -37,29 +37,18 @@ client.on("message", (message) => {
                 title: "Commands list",
                 description: "All commands are shown below",
                 fields: [{
-                        name: "Rules",
-                        value: "To find out about the rules please visit #Rules"
+                        name: "!Commands",
+                        value: "Responds with a list of commands"
                     },
                     {
-                        name: "What is TNF BlackMarket?",
-                        value: "The TNF Blackmarket is where people go to buy items and pounds with USD, Robux & Pounds, They can also contact a Market Manager to sell their items, If you have any more questions contact a Market Admin or higher"
+                        name: "!Invite",
+                        value: "Displays a invite code for the server that can be sent to other people."
                     },
                     {
-                        name: "Is this a scam?",
-                        value: "No, TNF Blackmarket is not a scam, We provide all our items at the cheapest prices possible, We have unlimited pounds & can get almost any item you need."
-                    },
-                    {
-                        name: "How do I use the custom bot?",
-                        value: "If you are wondering about the bot, Please use !commands in the bot-commands channel!"
+                        name: "!Rarelist",
+                        value: "This command will reply back with a list of all the rares items in TNF.)"
                     }
                 ],
-                timestamp: new Date(),
-                footer: {
-                    icon_url: client.user.avatarURL,
-                    text: "The Northern Frontier, BlackMarket"
-                }
-            }
-        })
     } else if (isCommand("Invite", message)) {
         message.reply("Here is the invite code you have requested. https://discord.gg/AVhHkDF");
     } else if (swearWords.some(word => message.content.toLowerCase().includes(word))) {
