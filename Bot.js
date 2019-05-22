@@ -12,7 +12,6 @@ function isCommand(command, message) {
     var command = command.toLowerCase();
     var content = message.content.toLowerCase();
     return content.startsWith(prefix + command);
-}
 
  if (isCommand("Commands", message)) {
         message.channel.send({
