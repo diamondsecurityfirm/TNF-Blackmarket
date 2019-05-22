@@ -1,7 +1,7 @@
 {
-  "name": "TNF Blackmarket AI",
-  "description": "This bot was designed for the discord server for TNF Blackmarket",
-  "version": "0.0.1",
+  "name": "Test",
+  "description": "Test",
+  "version": "0.0.0",
   "main": "Bot.js",
   "scripts": {
       "start": "node Bot.js"
