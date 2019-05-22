@@ -61,8 +61,6 @@ client.on("message", (message) => {
     } else if (swearWords.some(word => message.content.toLowerCase().includes(word))) {
         message.delete();
         message.reply("If you have been scammed, Please contact The TNF Blackmarket Staff team, If you have questions about if this is a scam, Feel free to check out the information channel or talk to a staff member.");
-    }
-}
-})
+    };
 
 client.login(process.env.BOT_TOKEN);
