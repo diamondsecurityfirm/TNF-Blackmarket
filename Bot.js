@@ -49,6 +49,13 @@ client.on("message", (message) => {
                         value: "This command will reply back with a list of all the rares items in TNF.)"
                     }
                 ],
+                timestamp: new Date(),
+                footer: {
+                    icon_url: client.user.avatarURL,
+                    text: "The Northern Frontier Blackmarket"
+                }
+            }
+        })
     } else if (isCommand("Invite", message)) {
         message.reply("Here is the invite code you have requested. https://discord.gg/AVhHkDF");
     } else if (swearWords.some(word => message.content.toLowerCase().includes(word))) {
