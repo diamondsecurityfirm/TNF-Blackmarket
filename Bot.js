@@ -14,19 +14,7 @@ function isCommand(command, message) {
     return content.startsWith(prefix + command);
 }
 
-// General commands
-client.on("message", (message) => {
-    if (message.author.bot) return; // Dont answer yourself.
-    var args = message.content.split(/[ ]+/)
-
-    let soruce = message
-    let guild = message.guild
-    let channels = guild.channels
-    var ruleschannel = channels.find("name", "rules")
-    var general = channels.find("name", "general-chat")
-    var logchannel = channels.find("name", "admin-logs")
-
-    if (isCommand("Commands", message)) {
+ if (isCommand("Commands", message)) {
         message.channel.send({
             embed: {
                 color: 3447003,
@@ -34,25 +22,29 @@ client.on("message", (message) => {
                     name: client.user.username,
                     icon_url: client.user.avatarURL
                 },
-                title: "Commands list",
-                description: "All commands are shown below",
+                title: "TNF BlackMarket Information",
+                description: "Information about the market can be found below",
                 fields: [{
-                        name: "!Commands",
-                        value: "Responds with a list of commands"
+                        name: "Rules",
+                        value: "To find out about the rules please visit #Rules"
                     },
                     {
-                        name: "!Invite",
-                        value: "Displays a invite code for the server that can be sent to other people."
+                        name: "What is TNF BlackMarket?",
+                        value: "The TNF Blackmarket is where people go to buy items and pounds with USD, Robux & Pounds, They can also contact a Market Manager to sell their items, If you have any more questions contact a Market Admin or higher"
                     },
                     {
-                        name: "!Rarelist",
-                        value: "This command will reply back with a list of all the rares items in TNF.)"
+                        name: "Is this a scam?",
+                        value: "No, TNF Blackmarket is not a scam, We provide all our items at the cheapest prices possible, We have unlimited pounds & can get almost any item you need."
+                    },
+                    {
+                        name: "How do I use the custom bot?",
+                        value: "If you are wondering about the bot, Please use !commands in the bot-commands channel!"
                     }
                 ],
                 timestamp: new Date(),
                 footer: {
                     icon_url: client.user.avatarURL,
-                    text: "The Northern Frontier, BlackMarket"
+                    text: "[TGM] The German Mercenaries"
                 }
             }
         })
