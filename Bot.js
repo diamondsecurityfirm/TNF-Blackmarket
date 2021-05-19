@@ -43,24 +43,20 @@ client.on("message", (message) => {
                     {
                         name: "!Invite",
                         value: "Displays a invite code for the server that can be sent to other people."
-                    },
-                    {
-                        name: "!Rarelist",
-                        value: "This command will reply back with a list of all the rares items in TNF.)"
                     }
                 ],
                 timestamp: new Date(),
                 footer: {
                     icon_url: client.user.avatarURL,
-                    text: "The Northern Frontier Blackmarket"
+                    text: "Roblox Casino & Resort"
                 }
             }
         })
     } else if (isCommand("Invite", message)) {
-        message.reply("Here is the invite code you have requested. https://discord.gg/AVhHkDF");
+        message.reply("Here is the invite code you have requested. https://discord.gg/knDrmC6HbE");
     } else if (swearWords.some(word => message.content.toLowerCase().includes(word))) {
         message.delete();
-        message.reply("If you have been scammed, Please contact The TNF Blackmarket Staff team, If you have questions about if this is a scam, Feel free to check out the information channel or talk to a staff member.");
+        message.reply("If you have questions about if this is a scam, Feel free to check out the information channel or talk to a staff member.");
        }
     });
 
